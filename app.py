@@ -2,7 +2,7 @@ import os  # For File Manipulations like get paths, rename
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 app.secret_key = "secret key"  # for encrypting the session
 # It will allow below 16MB contents only, you can change it

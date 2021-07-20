@@ -33,6 +33,7 @@ header{
 
 h1, h2{
 font-weight: 400;
+text-align: center;
 }
 
 #description{
@@ -42,7 +43,8 @@ text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
 }
 
 #survey-form{
-  background: rgba(21, 20, 85, 0.7);
+  /* background: rgba(21, 20, 85, 0.7); */
+  background: rgba(3, 241, 63, 0.7);
   padding: 2.3rem 0.5rem;
   border-radius: 0.3rem;
   font-size: 50px;
@@ -50,6 +52,7 @@ text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
 
 .form-input{
   margin: 0 2.5rem 1.2rem 2rem;
+  background: rgba(3, 241, 63, 0.7);
   font-size: 50px;
 }
 
