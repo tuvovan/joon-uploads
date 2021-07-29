@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'datamining'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f6efd87869c644cc9b6f722ad05098b9 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_3ce8d146a57a4b3c884c37d31cb5627e }}
