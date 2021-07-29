@@ -1,0 +1,1 @@
+DefaultEndpointsProtocol=https;AccountName=imagedatamining;AccountKey=rKjSLU7t3mGMRtVRg9+1khy0bOb3yqAyLp3hKpyF2E6yw3E5Cfj9Kv5coZ7bSiD9owzIB+yGkVXoyEkwQvpYgw==;EndpointSuffix=core.windows.net

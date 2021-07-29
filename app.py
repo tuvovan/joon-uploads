@@ -1,6 +1,7 @@
 import os  # For File Manipulations like get paths, rename
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
+from upload_azure import *
 
 app = Flask(__name__) 
 
@@ -42,17 +43,19 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            if not os.path.exists(
-                os.path.join(app.config["UPLOAD_FOLDER"], product_name, thickness)
-            ):
-                os.makedirs(
-                    os.path.join(app.config["UPLOAD_FOLDER"], product_name, thickness)
-                )
-            file.save(
-                os.path.join(
-                    app.config["UPLOAD_FOLDER"], product_name, thickness, filename
-                )
-            )
+            filename = '%s_%s_%s'%(product_name, thickness, filename)
+            # if not os.path.exists(
+            #     os.path.join(app.config["UPLOAD_FOLDER"], product_name, thickness)
+            # ):
+            #     os.makedirs(
+            #         os.path.join(app.config["UPLOAD_FOLDER"], product_name, thickness)
+            #     )
+            # file.save(
+            #     os.path.join(
+            #         app.config["UPLOAD_FOLDER"], product_name, thickness, filename
+            #     )
+            # )
+            upload(filename, file)
             flash("File successfully uploaded")
             return redirect("/")
         else:
