@@ -2,46 +2,46 @@
 
 <head>
     <title>Upload Images</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
 </head>
 
 <body>
-    <h2>Select file to upload</h2>
-    <p>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-    <ul class=flashes>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    </p>
-
     <h2 class="mt-5">Wound App</h2>
+    
     <form id='survey-form' method="post" action="/" enctype="multipart/form-data">
-        <div class='form-input'>
-            <dl>
-                <p>
-                    <input size="600" type="file" name="file" autocomplete="off" required class="custom-file-input" style="width: 100%; background: rgb(7, 173, 7); color: white;">
-                </p>
-            </dl>
+        <div>
+            <input size="600" type="file" name="file" id="actual-btn" hidden/>
+            <label for="actual-btn">Choose File</label>
         </div>
 
-        <div class='form-input'>
-            <label for="products">Choose a product:</label><br />
-            <input type="radio" name="products" value="product1"><span>Product1</span><br />
-            <input type="radio" name="products" value="product2"><span>Product2</span><br />
-            <label for="thickness">Choose the thickness:</label><br />
-            <input type="radio" name="thickness" value="Thin"><span>Thin</span><br />
-            <input type="radio" name="thickness" value="Thick"><span>Thick</span><br />
+        <div>
+            <h3 for="products">Choose a product:</h3>
+            <input type="checkbox" name="products" value="product1"><span>Product1</span><br />
+            <input type="checkbox" name="products" value="product2"><span>Product2</span><br />
+            <h3 for="thickness">Choose the thickness:</h3>
+            <input type="checkbox" name="thickness" value="Thin"><span>Thin</span><br />
+            <input type="checkbox" name="thickness" value="Thick"><span>Thick</span><br />
         </div>
 
-        <div class='form-input'>
+        <div>
             <p>
                 <input type="submit" value="Submit" id="submit">
             </p>
         </div>
     </form>
+
 </body>
+
+
+<!-- <h2>Select file to upload</h2>
+<p>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</p> -->

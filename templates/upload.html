@@ -1,0 +1,31 @@
+<!doctype html>
+
+<head>
+    <title>Upload Images</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stls.css') }}">
+</head>
+
+<body>
+    <h2>Select file to upload</h2>
+
+    <h2>Wound App</h2>
+    <form id='survey-form' method="post" action="/" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" accept="image/*" onchange="form.submit()">
+        <label for="file">
+            <i class="material-icons">
+                add_photo_alternate
+            </i>&nbsp;
+            Choose a Photo
+        </label>
+    </form>
+    <div class='form-input'>
+        <label for="products">Choose a product:</label><br />
+        <input type="radio" name="products" value="product1"><span>Product1</span><br />
+        <input type="radio" name="products" value="product2"><span>Product2</span><br />
+        <label for="thickness">Choose the thickness:</label><br />
+        <input type="radio" name="thickness" value="Thin"><span>Thin</span><br />
+        <input type="radio" name="thickness" value="Thick"><span>Thick</span><br />
+    </div>
+</body>

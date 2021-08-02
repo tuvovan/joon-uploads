@@ -25,5 +25,4 @@ def upload(file_name, file):
 
     # Upload the created file
     # with open(upload_file_path, "rb") as data:
-    blob_client.upload_blob(file)
-    # blob_service_client.create_blob_from_stream(container_name, file_name, file)
+    blob_client.upload_blob(file, overwrite=True)

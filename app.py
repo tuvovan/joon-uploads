@@ -22,10 +22,21 @@ ALLOWED_EXTENSIONS = set(["txt", "pdf", "png", "jpg", "jpeg", "gif"])
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
 @app.route("/")
+def welcome():
+    return render_template("welcome.html")
+
+@app.route("/agreement")
+def agreement():
+    return render_template("agreement.html")
+
+@app.route("/upload")
 def upload_form():
     return render_template("upload_index.html")
+
+@app.route("/thankyou")
+def thankyou():
+    return render_template("thankyou.html")
 
 
 @app.route("/", methods=["POST"])
@@ -37,24 +48,15 @@ def upload_file():
         if "file" not in request.files:
             flash("No file part")
             return redirect(request.url)
+
         file = request.files["file"]
         if file.filename == "":
             flash("No file selected for uploading")
             return redirect(request.url)
+
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             filename = '%s_%s_%s'%(product_name, thickness, filename)
-            # if not os.path.exists(
-            #     os.path.join(app.config["UPLOAD_FOLDER"], product_name, thickness)
-            # ):
-            #     os.makedirs(
-            #         os.path.join(app.config["UPLOAD_FOLDER"], product_name, thickness)
-            #     )
-            # file.save(
-            #     os.path.join(
-            #         app.config["UPLOAD_FOLDER"], product_name, thickness, filename
-            #     )
-            # )
             upload(filename, file)
             flash("File successfully uploaded")
             return redirect("/")
